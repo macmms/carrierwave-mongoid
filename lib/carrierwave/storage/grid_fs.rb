@@ -67,6 +67,10 @@ module CarrierWave
           grid.delete(path)
         end
 
+        def exist?
+          return !grid.exist?(:filename => path).nil?
+        end
+
         def content_type
           grid.open(path, 'r').content_type
         end
